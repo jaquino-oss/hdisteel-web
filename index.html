@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDISTEEL | Varilla de Acero Corrugada en Honduras</title>
+    <meta name="description" content="Fabricantes de varilla de acero corrugada Grado 60 (ASTM A615) en San Pedro Sula, Honduras. Calibres de 3/8&quot; a 1&quot;, largos de 20 a 40 pies. Solicite su cotización.">
+    <meta property="og:title" content="HDISTEEL | Varilla de Acero Corrugada en Honduras">
+    <meta property="og:description" content="Varilla corrugada Grado 60 bajo norma ASTM A615, fabricada en Honduras. Solicite su cotización.">
+    <meta property="og:image" content="logo-hdisteel.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="logo-hdisteel.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Desplazamiento suave y compensación del header fijo al navegar con anclas */
+        html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans antialiased">
+
+    <!-- 1. BARRA DE UTILIDAD SUPERIOR -->
+    <div class="bg-slate-900 text-gray-300 text-xs py-2 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
+                <span>📍 Planta Industrial, San Pedro Sula, Honduras</span>
+                <span class="hidden md:inline" aria-hidden="true">|</span>
+                <span class="font-semibold text-green-500">♻️ Certificación EPD de Sostenibilidad</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:+50425550199" class="hover:text-white transition">📞 Ventas: +(504) 2555-0199</a>
+                <a href="#rfq" class="hidden sm:inline-block bg-blue-800 text-white font-bold px-3 py-1 uppercase tracking-wider text-[11px] hover:bg-blue-700 transition">Cotización Rápida</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. HEADER Y NAVEGACIÓN PRINCIPAL -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 lg:h-24 flex items-center justify-between">
+
+            <!-- Logo Corporativo Adaptativo -->
+            <div class="flex items-center">
+                <a href="index.html" aria-label="HDI STEEL - Inicio">
+                    <img src="logo-hdisteel.png" alt="HDI STEEL Logo" class="h-10 lg:h-14 w-auto object-contain brightness-0 opacity-90">
+                </a>
+            </div>
+
+            <!-- Menú de Escritorio -->
+            <nav id="menu-escritorio" aria-label="Navegación principal" class="hidden lg:flex space-x-6 text-sm font-bold uppercase tracking-wider text-slate-700">
+                <a href="index.html" class="text-blue-800 border-b-2 border-blue-800 py-1" aria-current="page">Inicio</a>
+                <a href="#productos" class="hover:text-blue-800 py-1 transition">Productos</a>
+                <a href="materiales.html" class="hover:text-blue-800 py-1 transition">Materiales</a>
+                <a href="#dimensiones" class="hover:text-blue-800 py-1 transition">Dimensiones</a>
+                <a href="#rfq" class="hover:text-blue-800 py-1 transition">Contacto</a>
+            </nav>
+
+            <!-- Botón de Cotización Rápida -->
+            <div class="hidden sm:block">
+                <a href="#rfq" class="border-2 border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white transition font-black px-6 py-3 uppercase tracking-wider text-xs">
+                    Solicitar Cotización
+                </a>
+            </div>
+
+            <!-- GATILLO DEL MENÚ MÓVIL -->
+            <div class="lg:hidden flex items-center">
+                <button id="boton-hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel-menu-movil" class="text-slate-900 p-2 border border-gray-300 rounded hover:bg-gray-50 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+                    <svg id="icono-abrir" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="icono-cerrar" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- MENÚ DESPLEGABLE INTERNO MÓVIL -->
+        <nav id="panel-menu-movil" aria-label="Navegación móvil" class="hidden lg:hidden bg-white border-t border-gray-200 shadow-inner px-6 py-4 space-y-4">
+            <a href="index.html" class="block text-sm font-bold uppercase text-blue-800 border-l-4 border-blue-800 pl-2 tracking-wide" aria-current="page">Inicio</a>
+            <a href="#productos" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide">Productos</a>
+            <a href="materiales.html" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide">Materiales</a>
+            <a href="#dimensiones" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide">Dimensiones</a>
+            <a href="#rfq" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide">Contacto</a>
+            <a href="#rfq" class="block text-center bg-red-700 hover:bg-red-600 text-white font-bold px-4 py-3 uppercase tracking-wider text-xs transition">Solicitar Cotización</a>
+        </nav>
+    </header>
+
+    <main>
+    <!-- 3. HERO SECTION CON VIDEO DE FONDO -->
+    <section class="relative bg-slate-950 text-white border-b-4 border-blue-800 overflow-hidden">
+        <video id="video-hero" autoplay loop muted playsinline preload="metadata" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-60 z-0">
+            <source src="video-fundicion.mp4" type="video/mp4">
+        </video>
+
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/60 to-slate-950/30 z-10"></div>
+
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+            <div class="space-y-6">
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight uppercase leading-none text-white border-l-4 border-red-600 pl-4 drop-shadow-md">
+                    Siderurgia de Alta Resistencia <br><span class="text-blue-400">para Centroamérica</span>
+                </h1>
+                <p class="text-gray-200 text-base sm:text-lg max-w-xl font-normal leading-relaxed drop-shadow-sm">
+                    Fabricamos y distribuimos varilla corrugada Grado 60 bajo estándares internacionales desde nuestra planta en Honduras. El soporte sólido para la infraestructura de la región.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                    <a href="#rfq" class="bg-red-700 hover:bg-red-600 text-white text-center font-bold px-8 py-4 uppercase tracking-wider text-sm transition shadow-lg shadow-black/50">
+                        Solicitar Presupuesto Técnico
+                    </a>
+                    <a href="#dimensiones" class="bg-slate-900/80 hover:bg-slate-900 text-gray-200 text-center font-bold px-8 py-4 uppercase tracking-wider text-sm transition border border-slate-700 backdrop-blur-sm">
+                        Ver Tabla de Calibres
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block bg-slate-950/95 border border-slate-800 p-8 shadow-2xl">
+                <p class="text-sm font-bold uppercase tracking-widest text-blue-400 mb-4">Especificaciones de Planta</p>
+                <ul class="space-y-3 text-xs text-gray-300">
+                    <li class="flex justify-between gap-4 border-b border-slate-800 pb-2"><span>• Capacidad de Suministro:</span> <span class="font-mono text-white text-right">Escala Industrial Masiva</span></li>
+                    <li class="flex justify-between gap-4 border-b border-slate-800 pb-2"><span>• Norma Base de Calidad:</span> <span class="font-mono text-white text-right">ASTM A615 / A615M</span></li>
+                    <li class="flex justify-between gap-4 border-b border-slate-800 pb-2"><span>• Grado Estructural:</span> <span class="font-mono text-white text-right">Grado 60 (420 MPa)</span></li>
+                    <li class="flex justify-between gap-4"><span>• Cumplimiento Técnico:</span> <span class="font-mono text-red-400 text-right">Código de la Construcción (CHOC)</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PRESENTACIÓN DEL PRODUCTO ESTRELLA -->
+    <section id="productos" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl font-black uppercase text-slate-900 tracking-tight mb-2">Varilla de Acero Corrugada</h2>
+                <p class="text-xl font-bold text-blue-800 mb-6">Grado 60 (420 MPa)</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Fabricada bajo los más estrictos estándares de calidad en Honduras, nuestra varilla corrugada es el refuerzo estructural óptimo para obras civiles, comerciales y de mampostería pesada.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 p-2 rounded" aria-hidden="true">
+                            <span class="text-xl">📏</span>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-sm font-bold uppercase text-slate-900">Presentación y Atados</h3>
+                            <p class="text-sm text-slate-600 mt-1">Atados comerciales estructurados de 1 a 2 Toneladas. Disponibilidad en largos de 20, 25, 30, 35 y 40 pies.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-green-100 p-2 rounded" aria-hidden="true">
+                            <span class="text-xl">♻️</span>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-sm font-bold uppercase text-slate-900">18% Materia Prima Reciclada</h3>
+                            <p class="text-sm text-slate-600 mt-1">Sostenibilidad certificada mediante Declaración Ambiental de Producto (EPD), ideal para construcciones con enfoque ecológico.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-slate-100 p-2 rounded" aria-hidden="true">
+                            <span class="text-xl">✅</span>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-sm font-bold uppercase text-slate-900">Cumplimiento Legal</h3>
+                            <p class="text-sm text-slate-600 mt-1">Certificaciones bajo norma internacional ASTM A615 y alineados con el Código Hondureño de la Construcción.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="materiales.html" class="inline-block mt-8 text-sm font-bold uppercase tracking-wider text-blue-800 hover:text-blue-600 transition">
+                    Ver ficha técnica y certificaciones →
+                </a>
+            </div>
+            <div class="w-full md:w-1/2">
+                <!-- NOTA: reemplazar por una foto propia/licenciada (ej. "atados-varilla.jpg") -->
+                <img src="https://media.istockphoto.com/id/186504117/photo/steel-bars-construction-materials.jpg?s=612x612&w=0&k=20&c=qMKQlqeApnDoXcUP9c7FXnro0OJTKGJAD7AaaYGfIYs=" alt="Atados de varilla corrugada listos para despacho" width="612" height="408" loading="lazy" decoding="async" class="w-full h-auto rounded-lg shadow-xl border border-slate-200">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TABLA TÉCNICA DE DIMENSIONES -->
+    <section id="dimensiones" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-black uppercase tracking-wider mb-2 text-center">Dimensiones y Especificaciones</h2>
+            <p class="text-sm text-slate-400 mb-10 text-center">Inventario permanente en San Pedro Sula listo para distribución en los siguientes calibres.</p>
+
+            <p class="sm:hidden text-xs text-slate-500 mb-2 text-right">Deslice la tabla horizontalmente →</p>
+            <div class="overflow-x-auto bg-slate-950 border border-slate-800 shadow-2xl">
+                <table class="w-full text-left text-sm whitespace-nowrap">
+                    <caption class="sr-only">Calibres de varilla corrugada Grado 60 disponibles</caption>
+                    <thead class="bg-blue-900 text-white font-bold uppercase text-xs tracking-wider">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-center">No. Designación</th>
+                            <th scope="col" class="px-6 py-4 text-center">Diámetro (Pulgadas)</th>
+                            <th scope="col" class="px-6 py-4 text-center">Diámetro (mm)</th>
+                            <th scope="col" class="px-6 py-4 text-center">Peso Nominal (kg/m)</th>
+                            <th scope="col" class="px-6 py-4 text-center">Grado</th>
+                            <th scope="col" class="px-6 py-4 text-center">Longitudes Disp. (Pies)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr class="hover:bg-slate-900 transition text-center">
+                            <td class="px-6 py-3 font-mono">3</td>
+                            <td class="px-6 py-3 font-bold text-white">3/8"</td>
+                            <td class="px-6 py-3">10 mm</td>
+                            <td class="px-6 py-3 font-mono">0.560</td>
+                            <td class="px-6 py-3">60</td>
+                            <td class="px-6 py-3">20', 25', 30', 35', 40'</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900 transition text-center bg-slate-900/50">
+                            <td class="px-6 py-3 font-mono">4</td>
+                            <td class="px-6 py-3 font-bold text-white">1/2"</td>
+                            <td class="px-6 py-3">13 mm</td>
+                            <td class="px-6 py-3 font-mono">0.994</td>
+                            <td class="px-6 py-3">60</td>
+                            <td class="px-6 py-3">20', 25', 30', 35', 40'</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900 transition text-center">
+                            <td class="px-6 py-3 font-mono">5</td>
+                            <td class="px-6 py-3 font-bold text-white">5/8"</td>
+                            <td class="px-6 py-3">16 mm</td>
+                            <td class="px-6 py-3 font-mono">1.552</td>
+                            <td class="px-6 py-3">60</td>
+                            <td class="px-6 py-3">20', 25', 30', 35', 40'</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900 transition text-center bg-slate-900/50">
+                            <td class="px-6 py-3 font-mono">6</td>
+                            <td class="px-6 py-3 font-bold text-white">3/4"</td>
+                            <td class="px-6 py-3">19 mm</td>
+                            <td class="px-6 py-3 font-mono">2.235</td>
+                            <td class="px-6 py-3">60</td>
+                            <td class="px-6 py-3">20', 25', 30', 35', 40'</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900 transition text-center">
+                            <td class="px-6 py-3 font-mono">7</td>
+                            <td class="px-6 py-3 font-bold text-white">7/8"</td>
+                            <td class="px-6 py-3">22 mm</td>
+                            <td class="px-6 py-3 font-mono">3.042</td>
+                            <td class="px-6 py-3">60</td>
+                            <td class="px-6 py-3">20', 25', 30', 35', 40'</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900 transition text-center bg-slate-900/50">
+                            <td class="px-6 py-3 font-mono">8</td>
+                            <td class="px-6 py-3 font-bold text-white">1"</td>
+                            <td class="px-6 py-3">25 mm</td>
+                            <td class="px-6 py-3 font-mono">3.973</td>
+                            <td class="px-6 py-3">60</td>
+                            <td class="px-6 py-3">20', 25', 30', 35', 40'</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-500 mt-3 text-center">Pesos nominales según ASTM A615/A615M. ¿Necesita otro calibre o largo especial? <a href="#rfq" class="text-blue-400 hover:text-blue-300 underline">Consúltenos</a>.</p>
+        </div>
+    </section>
+
+    <!-- 6. FORMULARIO DE COTIZACIÓN (WEB3FORMS) -->
+    <section id="rfq" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="border-4 border-slate-900 bg-white p-6 sm:p-8 shadow-xl">
+            <div class="border-b border-gray-200 pb-4 mb-6">
+                <h2 class="text-2xl font-black uppercase text-slate-900 tracking-tight">Cotizar Atados de Acero</h2>
+                <p class="text-sm text-gray-500 mt-1">Complete los detalles de su pedido para enviarle una cotización comercial exacta de nuestras varillas Grado 60. Los campos marcados con <span class="text-red-600">*</span> son obligatorios.</p>
+            </div>
+
+            <form id="form-rfq" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <input type="hidden" name="access_key" value="b51d9f46-2d9a-4593-8240-f40faa69844d">
+                <input type="hidden" name="subject" value="Nuevo RFQ de Varilla - HDI STEEL Honduras">
+                <input type="hidden" name="from_name" value="Sitio Web HDI STEEL">
+                <!-- Anti-spam (honeypot) -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="rfq-nombre" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Nombre / Contratista <span class="text-red-600">*</span></label>
+                        <input id="rfq-nombre" type="text" name="name" required autocomplete="name" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800" placeholder="Ej. Constructora Nacional">
+                    </div>
+                    <div>
+                        <label for="rfq-empresa" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Empresa</label>
+                        <input id="rfq-empresa" type="text" name="empresa" autocomplete="organization" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800" placeholder="Opcional">
+                    </div>
+                    <div>
+                        <label for="rfq-email" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Correo Electrónico <span class="text-red-600">*</span></label>
+                        <input id="rfq-email" type="email" name="email" required autocomplete="email" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800" placeholder="nombre@empresa.com">
+                    </div>
+                    <div>
+                        <label for="rfq-telefono" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Teléfono / WhatsApp <span class="text-red-600">*</span></label>
+                        <input id="rfq-telefono" type="tel" name="telefono" required autocomplete="tel" inputmode="tel" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800" placeholder="Ej. +504 9999-9999">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="rfq-diametro" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Diámetro Principal</label>
+                        <select id="rfq-diametro" name="diametro_varilla" class="w-full border border-gray-300 px-3 py-2 text-sm bg-white focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800">
+                            <option value="3/8'' (10mm)">3/8" (10mm)</option>
+                            <option value="1/2'' (13mm)">1/2" (13mm)</option>
+                            <option value="5/8'' (16mm)">5/8" (16mm)</option>
+                            <option value="3/4'' (19mm)">3/4" (19mm)</option>
+                            <option value="7/8'' (22mm)">7/8" (22mm)</option>
+                            <option value="1'' (25mm)">1" (25mm)</option>
+                            <option value="Varios diámetros">Varios (detallar abajo)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="rfq-longitud" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Longitud (Pies)</label>
+                        <select id="rfq-longitud" name="longitud_pies" class="w-full border border-gray-300 px-3 py-2 text-sm bg-white focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800">
+                            <option value="20'">20'</option>
+                            <option value="25'">25'</option>
+                            <option value="30'">30'</option>
+                            <option value="35'">35'</option>
+                            <option value="40'">40'</option>
+                            <option value="Varias longitudes">Varias (detallar abajo)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="rfq-volumen" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Volumen Estimado (Ton.) <span class="text-red-600">*</span></label>
+                        <input id="rfq-volumen" type="number" name="volumen_toneladas" required min="0.1" step="any" inputmode="decimal" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800" placeholder="Ej. 50">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="rfq-detalles" class="block text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-1">Detalles Adicionales del Proyecto o Entrega</label>
+                    <textarea id="rfq-detalles" name="detalles_proyecto" rows="3" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-blue-800 focus:ring-1 focus:ring-blue-800" placeholder="Indique lugar de entrega, fecha requerida o desglose de atados por diámetro..."></textarea>
+                </div>
+
+                <button id="rfq-enviar" type="submit" class="w-full bg-slate-900 hover:bg-slate-800 disabled:opacity-60 disabled:cursor-wait text-white font-black py-4 uppercase tracking-wider text-xs transition cursor-pointer">
+                    Solicitar Cotización de Acero
+                </button>
+
+                <!-- Mensaje de estado del envío -->
+                <div id="rfq-estado" role="status" aria-live="polite" class="hidden text-sm p-4 border"></div>
+
+                <p class="text-xs text-gray-500 text-center">¿Prefiere hablar con un asesor? Llámenos al <a href="tel:+50425550199" class="font-bold text-blue-800 hover:underline">+(504) 2555-0199</a> o escriba a <a href="mailto:ventas@hdisteel.com" class="font-bold text-blue-800 hover:underline">ventas@hdisteel.com</a>.</p>
+            </form>
+        </div>
+    </section>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-slate-950 text-gray-400 text-xs py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <img src="logo-hdisteel.png" alt="HDISTEEL Logo" loading="lazy" class="h-10 w-auto object-contain mb-3 brightness-0 invert opacity-80">
+                <p class="mt-2 text-gray-500 leading-relaxed">Producción siderúrgica centroamericana de alta calidad orientada a contratistas y desarrolladores de infraestructura civil.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Estándares de Calidad</h4>
+                <p class="text-gray-500 leading-relaxed">Materiales despachados bajo estrictas normas ASTM A615 con reportes metalúrgicos completos de colada.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Contacto Corporativo</h4>
+                <p class="text-gray-500 leading-relaxed">
+                    Email: <a href="mailto:ventas@hdisteel.com" class="hover:text-white transition">ventas@hdisteel.com</a><br>
+                    Teléfono: <a href="tel:+50425550199" class="hover:text-white transition">+(504) 2555-0199</a><br>
+                    San Pedro Sula, Honduras<br>
+                    © <span id="anio-actual">2026</span> HDISTEEL Honduras. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Menú móvil ---
+        const botonHamburguesa = document.getElementById('boton-hamburguesa');
+        const panelMenuMovil = document.getElementById('panel-menu-movil');
+        const iconoAbrir = document.getElementById('icono-abrir');
+        const iconoCerrar = document.getElementById('icono-cerrar');
+
+        function setMenuAbierto(abierto) {
+            panelMenuMovil.classList.toggle('hidden', !abierto);
+            iconoAbrir.classList.toggle('hidden', abierto);
+            iconoCerrar.classList.toggle('hidden', !abierto);
+            botonHamburguesa.setAttribute('aria-expanded', String(abierto));
+            botonHamburguesa.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+        }
+
+        botonHamburguesa.addEventListener('click', () => {
+            setMenuAbierto(panelMenuMovil.classList.contains('hidden'));
+        });
+        panelMenuMovil.querySelectorAll('a').forEach(enlace => {
+            enlace.addEventListener('click', () => setMenuAbierto(false));
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') setMenuAbierto(false);
+        });
+
+        // --- Video: respetar preferencia de movimiento reducido ---
+        const videoHero = document.getElementById('video-hero');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            videoHero.removeAttribute('autoplay');
+            videoHero.pause();
+        }
+
+        // --- Año dinámico del footer ---
+        document.getElementById('anio-actual').textContent = new Date().getFullYear();
+
+        // --- Envío del formulario sin salir de la página ---
+        const formRfq = document.getElementById('form-rfq');
+        const botonEnviar = document.getElementById('rfq-enviar');
+        const estadoRfq = document.getElementById('rfq-estado');
+        const textoBoton = botonEnviar.textContent;
+
+        function mostrarEstado(mensaje, exito) {
+            estadoRfq.className = 'text-sm p-4 border ' + (exito
+                ? 'bg-green-50 border-green-600 text-green-800'
+                : 'bg-red-50 border-red-600 text-red-800');
+            estadoRfq.textContent = mensaje;
+        }
+
+        formRfq.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            botonEnviar.disabled = true;
+            botonEnviar.textContent = 'Enviando...';
+            estadoRfq.className = 'hidden';
+
+            try {
+                const respuesta = await fetch(formRfq.action, {
+                    method: 'POST',
+                    body: new FormData(formRfq),
+                    headers: { 'Accept': 'application/json' }
+                });
+                const datos = await respuesta.json();
+                if (respuesta.ok && datos.success) {
+                    formRfq.reset();
+                    mostrarEstado('✅ ¡Gracias! Recibimos su solicitud. Un asesor comercial le contactará en breve con su cotización.', true);
+                } else {
+                    throw new Error(datos.message || 'Error de envío');
+                }
+            } catch (error) {
+                mostrarEstado('No pudimos enviar su solicitud. Por favor intente de nuevo o llámenos al +(504) 2555-0199.', false);
+            } finally {
+                botonEnviar.disabled = false;
+                botonEnviar.textContent = textoBoton;
+            }
+        });
+    </script>
+
+</body>
+</html>
