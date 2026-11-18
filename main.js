@@ -44,6 +44,97 @@ if (videoHero && reducirMovimiento) {
     videoHero.pause();
 }
 
+// --- Carrusel de portada ---
+const slider = document.getElementById('hero-slider');
+if (slider) {
+    const slides = [...slider.querySelectorAll('.slide')];
+    const puntos = [...slider.querySelectorAll('.slider-punto')];
+    const botonPausa = document.getElementById('slider-pausa');
+    const iconoPausa = document.getElementById('icono-pausa');
+    const iconoPlay = document.getElementById('icono-play');
+    let actual = 0;
+    let temporizador = null;
+    let pausadoPorUsuario = false;  // solo el botón de pausa lo detiene
+    let interaccion = false;        // navegación con teclado dentro del carrusel
+
+    const actualizarBotonPausa = () => {
+        iconoPausa.classList.toggle('hidden', pausadoPorUsuario);
+        iconoPlay.classList.toggle('hidden', !pausadoPorUsuario);
+        botonPausa.setAttribute('aria-label', pausadoPorUsuario ? 'Reproducir carrusel' : 'Pausar carrusel');
+    };
+
+    const programar = () => {
+        clearTimeout(temporizador);
+        if (pausadoPorUsuario || interaccion || document.hidden) return;
+        const duracion = Number(slides[actual].dataset.duracion) || 7000;
+        temporizador = setTimeout(() => irA(actual + 1), duracion);
+    };
+
+    function irA(indice) {
+        slides[actual].classList.remove('activo');
+        puntos[actual].classList.remove('activo');
+        puntos[actual].removeAttribute('aria-current');
+
+        actual = (indice + slides.length) % slides.length;
+
+        slides[actual].classList.add('activo');
+        puntos[actual].classList.add('activo');
+        puntos[actual].setAttribute('aria-current', 'true');
+
+        // Solo el video de la diapositiva activa se reproduce
+        slides.forEach((slide, i) => {
+            const video = slide.querySelector('video');
+            if (!video) return;
+            if (i === actual && !reducirMovimiento) {
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+        programar();
+    }
+
+    puntos.forEach((punto, i) => punto.addEventListener('click', () => irA(i)));
+    document.getElementById('slider-anterior').addEventListener('click', () => irA(actual - 1));
+    document.getElementById('slider-siguiente').addEventListener('click', () => irA(actual + 1));
+
+    botonPausa.addEventListener('click', () => {
+        pausadoPorUsuario = !pausadoPorUsuario;
+        actualizarBotonPausa();
+        programar();
+    });
+
+    // Pausa solo mientras se navega con teclado (Tab) dentro del carrusel.
+    // No se pausa al pasar el cursor: la portada ocupa casi toda la pantalla
+    // y el carrusel quedaría detenido siempre.
+    slider.addEventListener('focusin', (e) => {
+        interaccion = e.target.matches(':focus-visible');
+        programar();
+    });
+    slider.addEventListener('focusout', () => { interaccion = false; programar(); });
+    document.addEventListener('visibilitychange', programar);
+
+    // Flechas del teclado
+    slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') irA(actual - 1);
+        if (e.key === 'ArrowRight') irA(actual + 1);
+    });
+
+    // Deslizar con el dedo en celulares
+    let inicioX = null;
+    slider.addEventListener('touchstart', (e) => { inicioX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', (e) => {
+        if (inicioX === null) return;
+        const dx = e.changedTouches[0].clientX - inicioX;
+        if (Math.abs(dx) > 50) irA(dx < 0 ? actual + 1 : actual - 1);
+        inicioX = null;
+    });
+
+    actualizarBotonPausa();
+    programar();
+}
+
 // --- Aparición al hacer scroll ---
 const elementosReveal = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && !reducirMovimiento) {
@@ -58,6 +149,73 @@ if ('IntersectionObserver' in window && !reducirMovimiento) {
     elementosReveal.forEach(el => observador.observe(el));
 } else {
     elementosReveal.forEach(el => el.classList.add('visible'));
+}
+
+// --- Contadores animados ---
+const contadores = document.querySelectorAll('[data-contador]');
+if ('IntersectionObserver' in window && !reducirMovimiento) {
+    const animarContador = (el) => {
+        const final = Number(el.dataset.contador);
+        const duracion = 1600;
+        const inicio = performance.now();
+        const paso = (ahora) => {
+            const avance = Math.min((ahora - inicio) / duracion, 1);
+            const suavizado = 1 - Math.pow(1 - avance, 3);
+            el.textContent = Math.round(final * suavizado);
+            if (avance < 1) requestAnimationFrame(paso);
+        };
+        requestAnimationFrame(paso);
+    };
+    const obsContador = new IntersectionObserver((entradas) => {
+        entradas.forEach(entrada => {
+            if (entrada.isIntersecting) {
+                animarContador(entrada.target);
+                obsContador.unobserve(entrada.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    contadores.forEach(el => { el.textContent = '0'; obsContador.observe(el); });
+}
+
+// --- Calculadora de peso ---
+const calcCalibre = document.getElementById('calc-calibre');
+if (calcCalibre) {
+    const calcLongitud = document.getElementById('calc-longitud');
+    const calcCantidad = document.getElementById('calc-cantidad');
+    const PIE_A_METRO = 0.3048;
+    const fmt = (n, dec) => n.toLocaleString('es-HN', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+
+    const calcular = () => {
+        const kgPorMetro = Number(calcCalibre.value);
+        const metros = Number(calcLongitud.value) * PIE_A_METRO;
+        const cantidad = Math.max(0, Math.floor(Number(calcCantidad.value) || 0));
+        const kgVarilla = kgPorMetro * metros;
+        const toneladas = (kgVarilla * cantidad) / 1000;
+        document.getElementById('calc-por-varilla').textContent = fmt(kgVarilla, 2);
+        document.getElementById('calc-total').textContent = fmt(toneladas, 3);
+        document.getElementById('calc-por-tonelada').textContent = fmt(Math.floor(1000 / kgVarilla), 0);
+        return { cantidad, toneladas };
+    };
+
+    [calcCalibre, calcLongitud, calcCantidad].forEach(el => el.addEventListener('input', calcular));
+    calcular();
+
+    // Enviar el resultado al formulario de cotización
+    document.getElementById('calc-cotizar').addEventListener('click', () => {
+        const { cantidad, toneladas } = calcular();
+        const opcion = calcCalibre.selectedOptions[0];
+        const selDiametro = document.getElementById('rfq-diametro');
+        const selLongitud = document.getElementById('rfq-longitud');
+        const inVolumen = document.getElementById('rfq-volumen');
+        const txtDetalles = document.getElementById('rfq-detalles');
+        if (selDiametro) selDiametro.value = opcion.dataset.rfq;
+        if (selLongitud) selLongitud.value = calcLongitud.value + "'";
+        if (inVolumen && toneladas > 0) inVolumen.value = toneladas.toFixed(2);
+        if (txtDetalles && cantidad > 0) {
+            const linea = `Calculadora: ${cantidad} varillas de ${opcion.dataset.nombre} x ${calcLongitud.value}' (≈ ${toneladas.toFixed(2)} t).`;
+            txtDetalles.value = txtDetalles.value ? txtDetalles.value + '\n' + linea : linea;
+        }
+    });
 }
 
 // --- Tarjetas giratorias: toque/teclado en móviles ---

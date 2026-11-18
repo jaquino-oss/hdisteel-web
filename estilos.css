@@ -36,12 +36,49 @@ body { font-family: 'Poppins', system-ui, sans-serif; }
         linear-gradient(135deg, #1C3C70 0%, #2B3449 100%);
 }
 
+/* ---------- Carrusel de portada ---------- */
+.slide { opacity: 0; visibility: hidden; transition: opacity 1s ease, visibility 0s linear 1s; }
+.slide.activo { opacity: 1; visibility: visible; transition: opacity 1s ease, visibility 0s; z-index: 1; }
+
+/* Zoom lento (efecto Ken Burns) en las imágenes */
+.slide-media { transform: scale(1); transition: transform 9s ease-out; }
+.slide.activo .slide-media { transform: scale(1.08); }
+
+/* Panel con esquinas asimétricas */
+.panel-slide { border-radius: 0 56px 0 56px; box-shadow: 0 20px 40px rgba(0, 28, 62, .35); }
+
+/* Entrada escalonada del texto */
+.slide.activo .slide-texto > * { animation: subir .9s ease both; }
+.slide.activo .slide-texto > *:nth-child(2) { animation-delay: .15s; }
+.slide.activo .slide-texto > *:nth-child(3) { animation-delay: .3s; }
+.slide.activo .slide-texto > *:nth-child(4) { animation-delay: .45s; }
+@keyframes subir { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* Puntos indicadores */
+.slider-punto {
+    width: 12px; height: 12px; border-radius: 9999px;
+    border: 2px solid #fff; background: transparent;
+    transition: width .4s ease, background-color .3s ease;
+}
+.slider-punto:hover { background: rgba(255, 255, 255, .5); }
+.slider-punto.activo { width: 32px; background: #fff; }
+.slider-punto:focus-visible, #slider-pausa:focus-visible,
+#slider-anterior:focus-visible, #slider-siguiente:focus-visible { outline: 2px solid #00B2FF; outline-offset: 3px; }
+
+/* ---------- Franja animada de normas ---------- */
+.marquesina-pista { width: max-content; animation: desplazar 35s linear infinite; }
+.marquesina:hover .marquesina-pista { animation-play-state: paused; }
+@keyframes desplazar { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 1.25rem)); } }
+
 /* ---------- Aparición suave al hacer scroll ---------- */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .js .reveal.visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .flip-inner, .js .reveal { transition: none; }
+    .flip-inner, .js .reveal, .slide-media { transition: none; }
+    .slide.activo .slide-media { transform: none; }
+    .slide.activo .slide-texto > * { animation: none; }
+    .marquesina-pista { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
     .js .reveal { opacity: 1; transform: none; }
 }
