@@ -7,11 +7,13 @@
     <meta name="description" content="Ficha técnica, propiedades mecánicas y certificaciones (ASTM A615, CHOC, EPD) de la varilla corrugada Grado 60 HDI STEEL fabricada en Honduras.">
     <link rel="icon" type="image/png" href="logo-hdisteel.png">
 
+    <!-- Tipografía Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script>document.documentElement.classList.add('js');</script>
+    <!-- Tailwind CSS + paleta corporativa -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,12 +39,24 @@
     <div class="bg-acero-profundo text-white/80 text-xs py-2">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-1">
-                <span>📍 Planta Industrial, San Pedro Sula, Honduras</span>
-                <span class="text-acero-verde font-medium">♻ Certificación EPD de Sostenibilidad</span>
+                <span class="inline-flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-acero-cian" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+                    Planta Industrial, San Pedro Sula, Honduras
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-acero-verde font-medium">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>
+                    Certificación EPD de Sostenibilidad
+                </span>
             </div>
             <div class="flex items-center gap-5">
-                <a href="tel:+50425550199" class="hover:text-white transition">📞 Ventas: +(504) 2555-0199</a>
-                <a href="mailto:ventas@hdisteel.com" class="hidden md:inline hover:text-white transition">✉ ventas@hdisteel.com</a>
+                <a href="tel:+50425550199" class="inline-flex items-center gap-1.5 hover:text-white transition">
+                    <svg class="w-4 h-4 text-acero-cian" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+                    Ventas: +(504) 2555-0199
+                </a>
+                <a href="mailto:ventas@hdisteel.com" class="hidden md:inline-flex items-center gap-1.5 hover:text-white transition">
+                    <svg class="w-4 h-4 text-acero-cian" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+                    ventas@hdisteel.com
+                </a>
             </div>
         </div>
     </div>
@@ -55,15 +69,14 @@
             </a>
 
             <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-8 text-[15px] text-acero-navy">
-                <a href="index.html" class="hover:text-acero-cian transition">Inicio</a>
-                <a href="index.html#productos" class="hover:text-acero-cian transition">Productos</a>
-                <a href="materiales.html" class="font-semibold text-acero-turquesa" aria-current="page">Materiales</a>
-                <a href="index.html#dimensiones" class="hover:text-acero-cian transition">Calibres</a>
-                <a href="index.html#calculadora" class="hover:text-acero-cian transition">Calculadora</a>
-                <a href="index.html#rfq" class="hover:text-acero-cian transition">Contacto</a>
+                <a href="index.html" class="hover:text-acero-cian border-b-2 border-transparent pb-1 transition">Inicio</a>
+                <a href="productos.html" class="hover:text-acero-cian border-b-2 border-transparent pb-1 transition">Productos</a>
+                <a href="materiales.html" class="font-semibold text-acero-turquesa border-b-2 border-acero-turquesa pb-1" aria-current="page">Materiales</a>
+                <a href="calibres.html" class="hover:text-acero-cian border-b-2 border-transparent pb-1 transition">Calibres</a>
+                <a href="contacto.html" class="hover:text-acero-cian border-b-2 border-transparent pb-1 transition">Contacto</a>
             </nav>
 
-            <a href="index.html#rfq" class="hidden sm:inline-block bg-acero-navy hover:bg-acero-turquesa text-white text-sm font-medium px-6 py-3 rounded-full transition">
+            <a href="contacto.html" class="hidden sm:inline-block bg-acero-navy hover:bg-acero-turquesa text-white text-sm font-medium px-6 py-3 rounded-full transition">
                 Solicitar Cotización
             </a>
 
@@ -74,13 +87,12 @@
         </div>
 
         <nav id="panel-menu-movil" aria-label="Navegación móvil" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-5 space-y-1">
-            <a href="index.html" class="block py-2 text-acero-navy hover:text-acero-cian">Inicio</a>
-            <a href="index.html#productos" class="block py-2 text-acero-navy hover:text-acero-cian">Productos</a>
-            <a href="materiales.html" class="block py-2 font-semibold text-acero-turquesa" aria-current="page">Materiales</a>
-            <a href="index.html#dimensiones" class="block py-2 text-acero-navy hover:text-acero-cian">Calibres</a>
-            <a href="index.html#calculadora" class="block py-2 text-acero-navy hover:text-acero-cian">Calculadora de peso</a>
-            <a href="index.html#rfq" class="block py-2 text-acero-navy hover:text-acero-cian">Contacto</a>
-            <a href="index.html#rfq" class="block mt-3 text-center bg-acero-navy hover:bg-acero-turquesa text-white font-medium px-4 py-3 rounded-full transition">Solicitar Cotización</a>
+            <a href="index.html" class="block py-2 pl-3 text-acero-navy hover:text-acero-cian border-l-4 border-transparent">Inicio</a>
+            <a href="productos.html" class="block py-2 pl-3 text-acero-navy hover:text-acero-cian border-l-4 border-transparent">Productos</a>
+            <a href="materiales.html" class="block py-2 pl-3 font-semibold text-acero-turquesa border-l-4 border-acero-turquesa" aria-current="page">Materiales</a>
+            <a href="calibres.html" class="block py-2 pl-3 text-acero-navy hover:text-acero-cian border-l-4 border-transparent">Calibres</a>
+            <a href="contacto.html" class="block py-2 pl-3 text-acero-navy hover:text-acero-cian border-l-4 border-transparent">Contacto</a>
+            <a href="contacto.html" class="block mt-3 text-center bg-acero-navy hover:bg-acero-turquesa text-white font-medium px-4 py-3 rounded-full transition">Solicitar Cotización</a>
         </nav>
     </header>
 
@@ -203,35 +215,35 @@
             <span class="divisor divisor-centro"></span>
             <p class="text-white/80 mt-6">Revise los calibres, pesos nominales y longitudes disponibles (de 20 a 40 pies).</p>
             <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="index.html#dimensiones" class="bg-acero-turquesa hover:bg-acero-cian px-8 py-4 rounded-full font-medium transition">Ver calibres</a>
-                <a href="index.html#rfq" class="border border-white/70 hover:bg-white hover:text-acero-navy px-8 py-4 rounded-full font-medium transition">Solicitar cotización</a>
+                <a href="calibres.html" class="bg-acero-turquesa hover:bg-acero-cian px-8 py-4 rounded-full font-medium transition">Ver calibres</a>
+                <a href="contacto.html" class="border border-white/70 hover:bg-white hover:text-acero-navy px-8 py-4 rounded-full font-medium transition">Solicitar cotización</a>
             </div>
         </div>
     </section>
     </main>
 
-    <!-- 8. FOOTER -->
+    <!-- FOOTER -->
     <footer class="bg-acero-navy text-white/70 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
-                <img src="logo-hdisteel.png" alt="HDI STEEL Logo" loading="lazy" class="h-12 w-auto object-contain brightness-0 invert">
-                <p class="mt-4 leading-relaxed">Acero corrugado de alta resistencia fabricado con orgullo en Honduras para el desarrollo de la infraestructura centroamericana.</p>
+                <img src="logo-hdisteel.png" alt="HDISTEEL Logo" loading="lazy" class="h-12 w-auto object-contain brightness-0 invert">
+                <p class="mt-4 leading-relaxed">Producción siderúrgica centroamericana de alta calidad para contratistas y desarrolladores de infraestructura civil.</p>
             </div>
             <div>
                 <h4 class="text-white font-semibold">Navegación</h4>
                 <span class="divisor !w-10 !mt-2"></span>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="index.html#productos" class="hover:text-acero-cian transition">Productos</a></li>
+                    <li><a href="productos.html" class="hover:text-acero-cian transition">Productos</a></li>
                     <li><a href="materiales.html" class="hover:text-acero-cian transition">Materiales y certificaciones</a></li>
-                    <li><a href="index.html#dimensiones" class="hover:text-acero-cian transition">Calibres</a></li>
-                    <li><a href="index.html#calculadora" class="hover:text-acero-cian transition">Calculadora de peso</a></li>
-                    <li><a href="index.html#rfq" class="hover:text-acero-cian transition">Solicitar cotización</a></li>
+                    <li><a href="calibres.html" class="hover:text-acero-cian transition">Calibres</a></li>
+                    <li><a href="calibres.html#calculadora" class="hover:text-acero-cian transition">Calculadora de peso</a></li>
+                    <li><a href="contacto.html" class="hover:text-acero-cian transition">Solicitar cotización</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-semibold">Estándares de calidad</h4>
                 <span class="divisor !w-10 !mt-2"></span>
-                <p class="mt-4 leading-relaxed">Materiales entregados cumpliendo los códigos internacionales ASTM y las normas de seguridad estructural vigentes.</p>
+                <p class="mt-4 leading-relaxed">Materiales despachados bajo normas ASTM A615 con reportes metalúrgicos completos de colada.</p>
             </div>
             <div>
                 <h4 class="text-white font-semibold">Contacto</h4>
@@ -244,7 +256,7 @@
             </div>
         </div>
         <div class="border-t border-white/10">
-            <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-white/50 text-center">© <span id="anio-actual">2026</span> HDI STEEL. Todos los derechos reservados.</p>
+            <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-white/50 text-center">© <span id="anio-actual">2026</span> HDISTEEL Honduras. Todos los derechos reservados.</p>
         </div>
     </footer>
 

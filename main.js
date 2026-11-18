@@ -200,22 +200,38 @@ if (calcCalibre) {
     [calcCalibre, calcLongitud, calcCantidad].forEach(el => el.addEventListener('input', calcular));
     calcular();
 
-    // Enviar el resultado al formulario de cotización
-    document.getElementById('calc-cotizar').addEventListener('click', () => {
+    // Enviar el resultado a la página de contacto (se prellena el formulario)
+    document.getElementById('calc-cotizar').addEventListener('click', (e) => {
         const { cantidad, toneladas } = calcular();
         const opcion = calcCalibre.selectedOptions[0];
-        const selDiametro = document.getElementById('rfq-diametro');
-        const selLongitud = document.getElementById('rfq-longitud');
-        const inVolumen = document.getElementById('rfq-volumen');
-        const txtDetalles = document.getElementById('rfq-detalles');
-        if (selDiametro) selDiametro.value = opcion.dataset.rfq;
-        if (selLongitud) selLongitud.value = calcLongitud.value + "'";
-        if (inVolumen && toneladas > 0) inVolumen.value = toneladas.toFixed(2);
-        if (txtDetalles && cantidad > 0) {
-            const linea = `Calculadora: ${cantidad} varillas de ${opcion.dataset.nombre} x ${calcLongitud.value}' (≈ ${toneladas.toFixed(2)} t).`;
-            txtDetalles.value = txtDetalles.value ? txtDetalles.value + '\n' + linea : linea;
+        const params = new URLSearchParams({
+            diametro: opcion.dataset.rfq,
+            longitud: calcLongitud.value + "'",
+        });
+        if (toneladas > 0) params.set('volumen', toneladas.toFixed(2));
+        if (cantidad > 0) {
+            params.set('detalles', `Calculadora: ${cantidad} varillas de ${opcion.dataset.nombre} x ${calcLongitud.value}' (≈ ${toneladas.toFixed(2)} t).`);
         }
+        e.currentTarget.href = 'contacto.html?' + params.toString();
     });
+}
+
+// --- Prellenar el formulario con datos recibidos en la URL (desde Calibres o la calculadora) ---
+if (document.getElementById('form-rfq')) {
+    const params = new URLSearchParams(window.location.search);
+    const asignar = (id, valor) => {
+        const campo = document.getElementById(id);
+        if (!campo || !valor) return;
+        if (campo.tagName === 'SELECT' && ![...campo.options].some(o => o.value === valor)) return;
+        campo.value = valor;
+    };
+    asignar('rfq-diametro', params.get('diametro'));
+    asignar('rfq-longitud', params.get('longitud'));
+    asignar('rfq-volumen', params.get('volumen'));
+    asignar('rfq-detalles', params.get('detalles'));
+    if ([...params.keys()].length) {
+        document.getElementById('rfq')?.scrollIntoView({ block: 'start' });
+    }
 }
 
 // --- Tarjetas giratorias: toque/teclado en móviles ---
@@ -227,13 +243,9 @@ document.querySelectorAll('.flip').forEach(tarjeta => {
     });
 });
 
-// --- "Cotizar este calibre": preselecciona el diámetro en el formulario ---
-const selectDiametro = document.getElementById('rfq-diametro');
+// --- "Cotizar" dentro de una tarjeta: navega a contacto sin voltear la tarjeta ---
 document.querySelectorAll('[data-calibre]').forEach(boton => {
-    boton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (selectDiametro) selectDiametro.value = boton.dataset.calibre;
-    });
+    boton.addEventListener('click', (e) => e.stopPropagation());
 });
 
 // --- Formulario de cotización (Web3Forms) sin salir de la página ---
