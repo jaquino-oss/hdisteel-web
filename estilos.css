@@ -1,0 +1,47 @@
+/* =========================================================
+   HDISTEEL — Estilos compartidos (complemento de Tailwind)
+   ========================================================= */
+
+html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+body { font-family: 'Poppins', system-ui, sans-serif; }
+
+/* Divisor corto verde bajo los títulos */
+.divisor { display: block; width: 64px; height: 2px; background: #4ABD98; margin-top: 14px; }
+.divisor-centro { margin-left: auto; margin-right: auto; }
+
+/* ---------- Tarjetas giratorias (calibres) ---------- */
+.flip { perspective: 1200px; cursor: pointer; }
+.flip-inner {
+    position: relative; height: 100%;
+    transition: transform .6s cubic-bezier(.4, .2, .2, 1);
+    transform-style: preserve-3d;
+}
+.flip.is-flipped .flip-inner,
+.flip:focus-visible .flip-inner { transform: rotateY(180deg); }
+@media (hover: hover) {
+    .flip:hover .flip-inner { transform: rotateY(180deg); }
+}
+.flip-face {
+    position: absolute; inset: 0;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+    border-radius: 11px; overflow: hidden;
+}
+.flip-back { transform: rotateY(180deg); }
+.flip:focus-visible { outline: 3px solid #00B2FF; outline-offset: 4px; border-radius: 11px; }
+
+/* Textura sutil de acero para las caras frontales */
+.textura-acero {
+    background-image:
+        repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 2px, transparent 2px 14px),
+        linear-gradient(135deg, #1C3C70 0%, #2B3449 100%);
+}
+
+/* ---------- Aparición suave al hacer scroll ---------- */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .flip-inner, .js .reveal { transition: none; }
+    .js .reveal { opacity: 1; transform: none; }
+}

@@ -6,201 +6,245 @@
     <title>Materiales y Calidad | HDI STEEL</title>
     <meta name="description" content="Ficha técnica, propiedades mecánicas y certificaciones (ASTM A615, CHOC, EPD) de la varilla corrugada Grado 60 HDI STEEL fabricada en Honduras.">
     <link rel="icon" type="image/png" href="logo-hdisteel.png">
-    <style>html{scroll-behavior:smooth}</style>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
 
-    <!-- 1. BARRA DE UTILIDAD SUPERIOR -->
-    <div class="bg-slate-900 text-gray-300 text-xs py-2 border-b border-slate-800">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        acero: {
+                            navy: '#2B3449', marino: '#1C3C70', profundo: '#001C3E',
+                            cian: '#00B2FF', turquesa: '#00A4B1', verde: '#4ABD98',
+                            texto: '#58595B', gris: '#BABCBE', claro: '#F2F5F7'
+                        }
+                    },
+                    fontFamily: { sans: ['Poppins', 'system-ui', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-white text-acero-texto antialiased">
+
+    <!-- 1. BARRA SUPERIOR -->
+    <div class="bg-acero-profundo text-white/80 text-xs py-2">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center space-x-4">
+            <div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-1">
                 <span>📍 Planta Industrial, San Pedro Sula, Honduras</span>
-                <span class="hidden md:inline">|</span>
-                <span class="font-semibold text-green-500">♻️ Certificación EPD de Sostenibilidad</span>
+                <span class="text-acero-verde font-medium">♻ Certificación EPD de Sostenibilidad</span>
             </div>
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center gap-5">
                 <a href="tel:+50425550199" class="hover:text-white transition">📞 Ventas: +(504) 2555-0199</a>
-                <a href="index.html#rfq" class="bg-blue-800 text-white font-bold px-3 py-1 uppercase tracking-wider text-[11px] hover:bg-blue-700 transition">Cotización Rápida</a>
+                <a href="mailto:ventas@hdisteel.com" class="hidden md:inline hover:text-white transition">✉ ventas@hdisteel.com</a>
             </div>
         </div>
     </div>
 
-    <!-- 2. HEADER Y NAVEGACIÓN PRINCIPAL -->
-    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <!-- 2. HEADER -->
+    <header id="header-principal" class="bg-white/95 backdrop-blur border-b border-gray-100 sticky top-0 z-50 transition-shadow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 lg:h-24 flex items-center justify-between">
-            
-            <!-- Logo Corporativo Adaptativo -->
-            <div class="flex items-center">
-                <a href="index.html">
-                    <img src="logo-hdisteel.png" alt="HDI STEEL Logo" class="h-10 lg:h-14 w-auto object-contain brightness-0 opacity-90">
-                </a>
-            </div>
-            
-            <!-- Menú de Ingeniería Unificado -->
-            <nav id="menu-escritorio" class="hidden lg:flex space-x-6 text-sm font-bold uppercase tracking-wider text-slate-700">
-                <a href="index.html" class="hover:text-blue-800 py-1 transition">Inicio</a>
-                <a href="index.html#productos" class="hover:text-blue-800 py-1 transition">Productos</a>
-                <a href="materiales.html" class="text-blue-800 border-b-2 border-blue-800 py-1">Materiales</a>
-                <a href="index.html#dimensiones" class="hover:text-blue-800 py-1 transition">Dimensiones</a>
-                <a href="index.html#rfq" class="hover:text-blue-800 py-1 transition">Contacto</a>
+            <a href="index.html" aria-label="HDI STEEL - Inicio" class="flex items-center">
+                <img src="logo-hdisteel.png" alt="HDI STEEL Logo" class="h-10 lg:h-14 w-auto object-contain brightness-0 opacity-90">
+            </a>
+
+            <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-8 text-[15px] text-acero-navy">
+                <a href="index.html" class="hover:text-acero-cian transition">Inicio</a>
+                <a href="index.html#productos" class="hover:text-acero-cian transition">Productos</a>
+                <a href="materiales.html" class="font-semibold text-acero-turquesa" aria-current="page">Materiales</a>
+                <a href="index.html#dimensiones" class="hover:text-acero-cian transition">Calibres</a>
+                <a href="index.html#rfq" class="hover:text-acero-cian transition">Contacto</a>
             </nav>
 
-            <!-- Botón RFQ Rápido -->
-            <div class="hidden sm:block">
-                <a href="index.html#rfq" class="border-2 border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white transition font-black px-6 py-3 uppercase tracking-wider text-xs">
-                    Solicitar Cotización
-                </a>
-            </div>
+            <a href="index.html#rfq" class="hidden sm:inline-block bg-acero-navy hover:bg-acero-turquesa text-white text-sm font-medium px-6 py-3 rounded-full transition">
+                Solicitar Cotización
+            </a>
 
-            <!-- GATILLO DEL MENÚ MÓVIL -->
-            <div class="lg:hidden flex items-center">
-                <button id="boton-hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" class="text-slate-900 p-2 border border-gray-300 rounded hover:bg-gray-50 transition">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
+            <button id="boton-hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel-menu-movil" class="lg:hidden text-acero-navy p-2 rounded-full hover:bg-acero-claro transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-acero-cian">
+                <svg id="icono-abrir" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="icono-cerrar" class="h-7 w-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
         </div>
 
-        <!-- MENÚ DESPLEGABLE INTERNO MÓVIL -->
-        <div id="panel-menu-movil" class="hidden lg:hidden bg-white border-t border-gray-200 shadow-inner px-6 py-4 space-y-4">
-            <a href="index.html" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide">Inicio</a>
-            <a href="index.html#productos" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide link-menu-movil">Productos</a>
-            <a href="materiales.html" class="block text-sm font-bold uppercase text-blue-800 border-l-4 border-blue-800 pl-2 tracking-wide">Materiales</a>
-            <a href="index.html#dimensiones" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide link-menu-movil">Dimensiones</a>
-            <a href="index.html#rfq" class="block text-sm font-bold uppercase text-slate-700 hover:text-blue-800 tracking-wide link-menu-movil">Contacto</a>
-        </div>
+        <nav id="panel-menu-movil" aria-label="Navegación móvil" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-5 space-y-1">
+            <a href="index.html" class="block py-2 text-acero-navy hover:text-acero-cian">Inicio</a>
+            <a href="index.html#productos" class="block py-2 text-acero-navy hover:text-acero-cian">Productos</a>
+            <a href="materiales.html" class="block py-2 font-semibold text-acero-turquesa" aria-current="page">Materiales</a>
+            <a href="index.html#dimensiones" class="block py-2 text-acero-navy hover:text-acero-cian">Calibres</a>
+            <a href="index.html#rfq" class="block py-2 text-acero-navy hover:text-acero-cian">Contacto</a>
+            <a href="index.html#rfq" class="block mt-3 text-center bg-acero-navy hover:bg-acero-turquesa text-white font-medium px-4 py-3 rounded-full transition">Solicitar Cotización</a>
+        </nav>
     </header>
 
-    <!-- SCRIPT DE NAVEGACIÓN MÓVIL -->
-    <script>
-        const botonHamburguesa = document.getElementById('boton-hamburguesa');
-        const panelMenuMovil = document.getElementById('panel-menu-movil');
-        const enlacesMenuMovil = document.querySelectorAll('.link-menu-movil');
-
-        botonHamburguesa.addEventListener('click', () => {
-            botonHamburguesa.setAttribute("aria-expanded", String(panelMenuMovil.classList.contains("hidden")));
-            panelMenuMovil.classList.toggle('hidden');
-        });
-
-        enlacesMenuMovil.forEach(enlace => {
-            enlace.addEventListener('click', () => {
-                panelMenuMovil.classList.add('hidden');
-            });
-        });
-    </script>
-
-    <!-- 3. PAGE HEADER -->
-    <div class="bg-slate-900 py-16 border-b-4 border-blue-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-black uppercase text-white tracking-tight">Materiales y Certificaciones</h1>
-            <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Conoce a detalle la composición, grado estructural y normativas que respaldan nuestro acero corrugado fabricado en Honduras para toda la región centroamericana.</p>
+    <main>
+    <!-- 3. CABECERA DE PÁGINA -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-acero-profundo via-acero-marino to-[#1B6E7F] text-white">
+        <div class="absolute inset-0 opacity-25 textura-acero" aria-hidden="true"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+            <p class="text-acero-cian font-medium text-sm uppercase tracking-wide">Calidad certificada</p>
+            <h1 class="text-4xl sm:text-5xl font-medium mt-2">Materiales y certificaciones</h1>
+            <span class="divisor divisor-centro"></span>
+            <p class="text-white/80 mt-6 max-w-2xl mx-auto font-light">Conozca la composición, el grado estructural y las normativas que respaldan nuestro acero corrugado fabricado en Honduras para toda la región centroamericana.</p>
         </div>
-    </div>
+    </section>
 
-    <!-- 4. ESPECIFICACIONES DEL MATERIAL -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-                <img src="https://media.istockphoto.com/id/186504117/photo/steel-bars-construction-materials.jpg?s=612x612&w=0&k=20&c=qMKQlqeApnDoXcUP9c7FXnro0OJTKGJAD7AaaYGfIYs=" alt="Acero Corrugado Industrial" class="w-full h-80 object-cover rounded-lg shadow-md border border-slate-200">
+    <!-- 4. FICHA TÉCNICA -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <!-- NOTA: reemplazar por una foto propia/licenciada -->
+                <img src="https://media.istockphoto.com/id/186504117/photo/steel-bars-construction-materials.jpg?s=612x612&w=0&k=20&c=qMKQlqeApnDoXcUP9c7FXnro0OJTKGJAD7AaaYGfIYs=" alt="Acero corrugado industrial" loading="lazy" decoding="async" class="w-full h-80 lg:h-[420px] object-cover rounded-[20px] shadow-xl">
             </div>
-            <div>
-                <span class="text-blue-800 font-bold uppercase tracking-widest text-xs">Ficha Técnica</span>
-                <h2 class="text-3xl font-black uppercase text-slate-900 mt-2 mb-6">Varilla Corrugada Grado 60</h2>
-                <p class="text-slate-600 mb-6">Nuestras varillas de acero al carbono están diseñadas con resaltes (corrugas) que garantizan una adherencia óptima al concreto. El <strong>Grado 60 (420 MPa)</strong> indica el límite de fluencia mínimo, proporcionando la máxima seguridad estructural.</p>
-                
-                <div class="bg-white p-6 border border-slate-200 shadow-sm rounded-lg">
-                    <h3 class="font-bold text-slate-900 uppercase text-sm mb-4 border-b pb-2">Propiedades Mecánicas Mínimas (ASTM A615)</h3>
-                    <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex justify-between"><span>Límite de Fluencia (Fy):</span> <span class="font-bold">60,000 psi (420 MPa)</span></li>
-                        <li class="flex justify-between"><span>Resistencia a la Tracción (Fu):</span> <span class="font-bold">90,000 psi (620 MPa)</span></li>
-                        <li class="flex justify-between"><span>Elongación (en 8 pulgadas):</span> <span class="font-bold">7% a 9% (según diámetro)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+            <div class="reveal">
+                <p class="text-acero-turquesa font-medium text-sm uppercase tracking-wide">Ficha técnica</p>
+                <h2 class="text-3xl sm:text-4xl font-medium text-acero-navy mt-2">Varilla corrugada Grado 60</h2>
+                <span class="divisor"></span>
+                <p class="mt-6 leading-relaxed">Nuestras varillas de acero al carbono están diseñadas con resaltes (corrugas) que garantizan una adherencia óptima al concreto. El <strong class="text-acero-navy">Grado 60 (420 MPa)</strong> indica el límite de fluencia mínimo, proporcionando la máxima seguridad estructural.</p>
 
-        <!-- IDENTIFICACIÓN DE VARILLA -->
-        <div class="bg-slate-100 p-8 rounded-xl border border-slate-200 shadow-inner mb-16">
-            <h3 class="text-xl font-black uppercase text-slate-900 mb-6 text-center">Trazabilidad: Identifica nuestra varilla</h3>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-                <div class="bg-white p-4 rounded shadow-sm">
-                    <span class="block text-2xl mb-2">🏭</span>
-                    <h4 class="font-bold text-slate-900 text-sm uppercase">Fabricante</h4>
-                    <p class="text-xs text-slate-600 mt-1">Marca HDI STEEL grabada en la superficie de la barra.</p>
+                <div class="mt-8 bg-acero-claro rounded-[20px] p-6 sm:p-8">
+                    <h3 class="font-semibold text-acero-navy">Propiedades mecánicas mínimas (ASTM A615)</h3>
+                    <dl class="mt-5 space-y-4 text-sm">
+                        <div class="flex justify-between gap-4 border-b border-gray-200 pb-3"><dt>Límite de fluencia (Fy)</dt><dd class="font-semibold text-acero-navy text-right">60,000 psi (420 MPa)</dd></div>
+                        <div class="flex justify-between gap-4 border-b border-gray-200 pb-3"><dt>Resistencia a la tracción (Fu)</dt><dd class="font-semibold text-acero-navy text-right">90,000 psi (620 MPa)</dd></div>
+                        <div class="flex justify-between gap-4"><dt>Elongación (en 8 pulgadas)</dt><dd class="font-semibold text-acero-navy text-right">7% a 9% (según diámetro)</dd></div>
+                    </dl>
                 </div>
-                <div class="bg-white p-4 rounded shadow-sm">
-                    <span class="block text-2xl mb-2">📏</span>
-                    <h4 class="font-bold text-slate-900 text-sm uppercase">Diámetro</h4>
-                    <p class="text-xs text-slate-600 mt-1">Designación en octavos de pulgada (Ej: 4 = 1/2").</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow-sm">
-                    <span class="block text-2xl mb-2">💪</span>
-                    <h4 class="font-bold text-slate-900 text-sm uppercase">Grado</h4>
-                    <p class="text-xs text-slate-600 mt-1">Número 60 estructural visible en relieve.</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow-sm">
-                    <span class="block text-2xl mb-2">🇭🇳</span>
-                    <h4 class="font-bold text-slate-900 text-sm uppercase">Origen</h4>
-                    <p class="text-xs text-slate-600 mt-1">Marca <strong>"HN"</strong> certificando su fabricación en Honduras.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- CERTIFICACIONES Y NORMAS -->
-        <h2 class="text-2xl font-black uppercase text-slate-900 tracking-wider mb-8 text-center border-b-2 border-gray-300 pb-4 max-w-2xl mx-auto">
-            Certificaciones y Normativas
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white border-t-4 border-blue-800 p-6 shadow-md">
-                <h3 class="font-black text-lg text-slate-900 mb-2">ASTM A615 / A615M</h3>
-                <p class="text-sm text-slate-600 mb-4">Especificación internacional estándar para barras de acero de lingote al carbono para refuerzo de concreto.</p>
-                <span class="text-xs font-bold bg-blue-100 text-blue-800 px-2 py-1 rounded">Estándar Base</span>
-            </div>
-            <div class="bg-white border-t-4 border-blue-800 p-6 shadow-md">
-                <h3 class="font-black text-lg text-slate-900 mb-2">Código de Construcción</h3>
-                <p class="text-sm text-slate-600 mb-4">Nuestras varillas cumplen íntegramente con los requisitos estructurales del Código Hondureño de la Construcción (CHOC).</p>
-                <span class="text-xs font-bold bg-slate-200 text-slate-800 px-2 py-1 rounded">Normativa Nacional</span>
-            </div>
-            <div class="bg-white border-t-4 border-green-600 p-6 shadow-md">
-                <h3 class="font-black text-lg text-slate-900 mb-2">Certificación EPD®</h3>
-                <p class="text-sm text-slate-600 mb-4">Declaración Ambiental de Producto. Fabricamos nuestras varillas con un <strong>18% de materia prima de origen reciclado</strong>.</p>
-                <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-1 rounded">Sostenibilidad</span>
             </div>
         </div>
     </section>
 
-    <!-- 5. CALL TO ACTION AL INVENTARIO -->
-    <section class="bg-slate-900 text-center py-16">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-2xl font-black text-white uppercase tracking-wider mb-4">¿Buscas dimensiones específicas?</h2>
-            <p class="text-slate-400 mb-8">Revisa nuestra tabla completa de atados, pesos y longitudes disponibles (de 20 a 40 pies).</p>
-            <a href="index.html#dimensiones" class="inline-block border-2 border-white text-white font-bold px-8 py-3 uppercase tracking-wider text-sm hover:bg-white hover:text-slate-900 transition">
-                Ver Tabla de Dimensiones
-            </a>
+    <!-- 5. TRAZABILIDAD -->
+    <section class="py-20 bg-acero-claro">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <h2 class="text-3xl sm:text-4xl font-medium text-acero-navy">Trazabilidad: identifique nuestra varilla</h2>
+                <span class="divisor divisor-centro"></span>
+            </div>
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="reveal bg-white rounded-[20px] p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                    <span class="mx-auto w-16 h-16 rounded-full bg-acero-turquesa/10 text-acero-turquesa flex items-center justify-center">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
+                    </span>
+                    <h3 class="font-semibold text-acero-navy mt-5">Fabricante</h3>
+                    <p class="text-sm mt-2">Marca HDI STEEL grabada en la superficie de la barra.</p>
+                </div>
+                <div class="reveal bg-white rounded-[20px] p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                    <span class="mx-auto w-16 h-16 rounded-full bg-acero-cian/10 text-acero-cian flex items-center justify-center">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
+                    </span>
+                    <h3 class="font-semibold text-acero-navy mt-5">Diámetro</h3>
+                    <p class="text-sm mt-2">Designación en octavos de pulgada (Ej: 4 = 1/2").</p>
+                </div>
+                <div class="reveal bg-white rounded-[20px] p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                    <span class="mx-auto w-16 h-16 rounded-full bg-acero-marino/10 text-acero-marino flex items-center justify-center">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+                    </span>
+                    <h3 class="font-semibold text-acero-navy mt-5">Grado</h3>
+                    <p class="text-sm mt-2">Número 60 estructural visible en relieve.</p>
+                </div>
+                <div class="reveal bg-white rounded-[20px] p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                    <span class="mx-auto w-16 h-16 rounded-full bg-acero-verde/10 text-acero-verde flex items-center justify-center">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+                    </span>
+                    <h3 class="font-semibold text-acero-navy mt-5">Origen</h3>
+                    <p class="text-sm mt-2">Marca <strong class="text-acero-navy">"HN"</strong> certificando su fabricación en Honduras.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 6. FOOTER -->
-    <footer class="bg-slate-950 text-gray-400 text-xs py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- 6. CERTIFICACIONES -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center reveal">
+            <h2 class="text-3xl sm:text-4xl font-medium text-acero-navy">Certificaciones y normativas</h2>
+            <span class="divisor divisor-centro"></span>
+        </div>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="reveal rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+                <div class="h-2 bg-acero-marino"></div>
+                <div class="p-8">
+                    <span class="text-xs font-medium bg-acero-marino/10 text-acero-marino px-3 py-1 rounded-full">Estándar base</span>
+                    <h3 class="text-xl font-semibold text-acero-navy mt-4">ASTM A615 / A615M</h3>
+                    <p class="text-sm mt-3 leading-relaxed">Especificación internacional estándar para barras de acero al carbono, corrugadas y lisas, para refuerzo de concreto.</p>
+                </div>
+            </article>
+            <article class="reveal rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+                <div class="h-2 bg-acero-turquesa"></div>
+                <div class="p-8">
+                    <span class="text-xs font-medium bg-acero-turquesa/10 text-acero-turquesa px-3 py-1 rounded-full">Normativa nacional</span>
+                    <h3 class="text-xl font-semibold text-acero-navy mt-4">Código de Construcción</h3>
+                    <p class="text-sm mt-3 leading-relaxed">Nuestras varillas cumplen íntegramente con los requisitos estructurales del Código Hondureño de la Construcción (CHOC).</p>
+                </div>
+            </article>
+            <article class="reveal rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition bg-white">
+                <div class="h-2 bg-acero-verde"></div>
+                <div class="p-8">
+                    <span class="text-xs font-medium bg-acero-verde/15 text-emerald-700 px-3 py-1 rounded-full">Sostenibilidad</span>
+                    <h3 class="text-xl font-semibold text-acero-navy mt-4">Certificación EPD®</h3>
+                    <p class="text-sm mt-3 leading-relaxed">Declaración Ambiental de Producto. Fabricamos nuestras varillas con un <strong class="text-acero-navy">18% de materia prima de origen reciclado</strong>.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 7. CTA -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-acero-profundo to-acero-marino text-white">
+        <div class="absolute inset-0 opacity-20 textura-acero" aria-hidden="true"></div>
+        <div class="relative max-w-3xl mx-auto px-4 py-20 text-center reveal">
+            <h2 class="text-3xl sm:text-4xl font-medium">¿Busca dimensiones específicas?</h2>
+            <span class="divisor divisor-centro"></span>
+            <p class="text-white/80 mt-6">Revise los calibres, pesos nominales y longitudes disponibles (de 20 a 40 pies).</p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#dimensiones" class="bg-acero-turquesa hover:bg-acero-cian px-8 py-4 rounded-full font-medium transition">Ver calibres</a>
+                <a href="index.html#rfq" class="border border-white/70 hover:bg-white hover:text-acero-navy px-8 py-4 rounded-full font-medium transition">Solicitar cotización</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-acero-navy text-white/70 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
-                <img src="logo-hdisteel.png" alt="HDI STEEL Logo" class="h-10 w-auto object-contain mb-3 brightness-0 invert opacity-80">
-                <p class="mt-2 text-gray-500 leading-relaxed">Acero corrugado de alta resistencia fabricado con orgullo en Honduras para el desarrollo de la infraestructura centroamericana.</p>
+                <img src="logo-hdisteel.png" alt="HDI STEEL Logo" loading="lazy" class="h-12 w-auto object-contain brightness-0 invert">
+                <p class="mt-4 leading-relaxed">Acero corrugado de alta resistencia fabricado con orgullo en Honduras para el desarrollo de la infraestructura centroamericana.</p>
             </div>
             <div>
-                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Estándares de Calidad</h4>
-                <p class="text-gray-500 leading-relaxed">Materiales entregados cumpliendo estrictamente con los códigos internacionales ASTM y normas de seguridad estructural vigentes.</p>
+                <h4 class="text-white font-semibold">Navegación</h4>
+                <span class="divisor !w-10 !mt-2"></span>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="index.html#productos" class="hover:text-acero-cian transition">Productos</a></li>
+                    <li><a href="materiales.html" class="hover:text-acero-cian transition">Materiales y certificaciones</a></li>
+                    <li><a href="index.html#dimensiones" class="hover:text-acero-cian transition">Calibres</a></li>
+                    <li><a href="index.html#rfq" class="hover:text-acero-cian transition">Solicitar cotización</a></li>
+                </ul>
             </div>
             <div>
-                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Contacto Corporativo</h4>
-                <p class="text-gray-500">Email: <a href="mailto:ventas@hdisteel.com" class="hover:text-white transition">ventas@hdisteel.com</a><br>Teléfono: <a href="tel:+50425550199" class="hover:text-white transition">+(504) 2555-0199</a><br>© 2026 HDI STEEL. Todos los derechos reservados.</p>
+                <h4 class="text-white font-semibold">Estándares de calidad</h4>
+                <span class="divisor !w-10 !mt-2"></span>
+                <p class="mt-4 leading-relaxed">Materiales entregados cumpliendo los códigos internacionales ASTM y las normas de seguridad estructural vigentes.</p>
             </div>
+            <div>
+                <h4 class="text-white font-semibold">Contacto</h4>
+                <span class="divisor !w-10 !mt-2"></span>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="tel:+50425550199" class="hover:text-acero-cian transition">+(504) 2555-0199</a></li>
+                    <li><a href="mailto:ventas@hdisteel.com" class="hover:text-acero-cian transition">ventas@hdisteel.com</a></li>
+                    <li>San Pedro Sula, Honduras</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-white/50 text-center">© <span id="anio-actual">2026</span> HDI STEEL. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script src="main.js"></script>
 </body>
 </html>
